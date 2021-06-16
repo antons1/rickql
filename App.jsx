@@ -4,7 +4,7 @@ import {
     InMemoryCache,
     ApolloProvider
 } from "@apollo/client";
-import { HashRouter as Router, Switch, Route} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 import { Episodes } from './components/Episodes';
 import { Episode } from './components/Episode';
@@ -19,6 +19,8 @@ export const App = () => {
     return (
         <ApolloProvider client={client}>
             <Router>
+                <Link to="/">Home</Link><br />
+                <br />
                 <Switch>
                     <Route path="/characters/:id" component={Character} />
                     <Route path="/episodes/:id" component={Episode}/>
