@@ -14,8 +14,7 @@ query($id: ID!) {
     }
 }`
 
-export const Character = () => {
-    const { id } = useParams();
+const Character = ({ id }) => {
     const { data, loading, error } = useQuery(CHARACTER, { variables: { id } });
 
     return (
@@ -31,3 +30,5 @@ export const Character = () => {
         </div>
     )
 }
+
+export default Character;
